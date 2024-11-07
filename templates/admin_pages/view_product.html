@@ -1,0 +1,41 @@
+{% extends "admin_pages/base.html" %}
+{% load static %}
+
+{% block content %}
+ 
+           
+        <div class="col-lg-11 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Project Category Name</h4>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      
+                      <th>Product Name</th>
+                      <th>Image</th>
+                      <th>Description</th>
+                      <th>Update</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for product in product %}
+                    <tr>
+                      <td style="width: 150px;">{{ product.product_name }}</td>
+                      <td style="width: 150px;"><img src="{{ product.image.url }}" alt="{{ product.product_name }}" style="width:100px;height:auto;"/></td>
+                      <td style="width: 150px;">{{ product.description }}</td>
+                      <td style="width: 150px;"><a href="{% url 'update_product' product.id %}"><button><i class="mdi mdi-cloud-upload" aria-hidden="true"></i> </button></a></td>
+                      <td style="width: 150px;"><a href="{% url 'delete_product' product.id %}"><button><i class="mdi mdi-delete" aria-hidden="true"></i> </button></a></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endblock %}
+
+        
