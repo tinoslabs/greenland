@@ -7,8 +7,8 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5">
         <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{% static 'img/carousel-1.jpg' %}" alt="">
+            {% comment %} <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{% static 'img/44.jpg' %}" alt="" >
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -24,9 +24,27 @@
                         </div>
                     </div>
                 </div>
+            </div> {% endcomment %}
+            <div class="owl-carousel-item position-relative" style="height: 700px;"> <!-- Adjust height as needed -->
+                <img class="img-fluid w-100 h-100" src="{% static 'img/60.jpg' %}" alt="" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, 0);"> <!-- Make background transparent -->
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
+                                <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                {% for brochure in brochure %}
+                                <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{% static 'img/carousel-2.jpg' %}" alt="">
+            {% comment %} <div class="owl-carousel-item position-relative">
+                <img class="img-fluid w-100 h-100" src="{% static 'img/a.jpg' %}" alt="" style="height: 700px;">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -42,16 +60,34 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{% static 'img/carousel-3.jpg' %}" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
+            </div> {% endcomment %}
+            <div class="owl-carousel-item position-relative" style="height: 700px;"> <!-- Adjust height as needed -->
+                <img class="img-fluid w-100 h-100" src="{% static 'img/c.jpg' %}" alt="" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, 0);"> <!-- Make background transparent -->
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center">
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Our Journey & Vision</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Using renewable rubberwood resources, we’re proud to serve clients across India and internationally, supporting a sustainable future.</p>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
+                                <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                {% for brochure in brochure %}
+                                <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" style="height: 700px;"> <!-- Adjust height as needed -->
+                <img class="img-fluid w-100 h-100" src="{% static 'img/a.jpg' %}" alt="" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, 0);"> <!-- Make background transparent -->
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
                                 <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 {% for brochure in brochure %}
                                 <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
@@ -63,6 +99,37 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .header-image-container {
+            height: 500px; /* Default height for larger screens */
+        }
+        
+        .header-image-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        /* Remove overlay shade */
+        .header-image-container .overlay {
+            background: rgba(53, 53, 53, 0); /* Fully transparent */
+        }
+        
+        /* Adjust for small screens */
+        @media (max-width: 768px) {
+            .header-image-container {
+                height: 300px; /* Adjust height for medium screens */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-image-container {
+                height: 200px; /* Adjust height for small screens */
+            }
+        }
+        
+    </style>
     <!-- Carousel End -->
 
 
@@ -119,7 +186,7 @@
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/about.jpg' %}" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/44.jpg' %}" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -173,7 +240,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{% static 'img/service-1.jpg' %}" alt="">
+                            <img class="img-fluid" src="{% static 'img/3.jpg' %}" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Customized Particle Board Solutions</h4>
@@ -185,7 +252,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{% static 'img/service-2.jpg' %}" alt="">
+                            <img class="img-fluid" src="{% static 'img/35.jpg' %}" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Bulk Supply and Distribution</h4>
@@ -197,7 +264,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{% static 'img/service-3.jpg' %}" alt="">
+                            <img class="img-fluid" src="{% static 'img/j.jpg' %}" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Sustainable Manufacturing</h4>
@@ -209,7 +276,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{% static 'img/service-4.jpg' %}" alt="">
+                            <img class="img-fluid" src="{% static 'img/i.jpg' %}" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Responsive Customer Support</h4>
@@ -221,7 +288,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{% static 'img/service-5.jpg' %}" alt="">
+                            <img class="img-fluid" src="{% static 'img/f.jpg' %}" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Logistics and Delivery</h4>
@@ -233,7 +300,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{% static 'img/service-6.jpg' %}" alt="">
+                            <img class="img-fluid" src="{% static 'img/h.jpg' %}" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Product Customization</h4>
@@ -246,7 +313,13 @@
         </div>
     </div>
     <!-- Service End -->
-
+<style>
+    .service-item img {
+        height: 250px; /* Adjust this height as needed */
+        width: 100%;
+        object-fit: cover; /* Ensures the image covers the area and is centered */
+    }
+</style>
 
     <!-- Feature Start -->
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
@@ -310,7 +383,7 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/feature.jpg' %}" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/b.jpg' %}" style="object-fit: cover;" alt="">
                     </div>
                 </div>
             </div>
@@ -329,8 +402,8 @@
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
                         <li class="mx-2 active" data-filter="*">All</li>
-                        <li class="mx-2" data-filter=".first">General Carpentry</li>
-                        <li class="mx-2" data-filter=".second">Custom Carpentry</li>
+                        {% comment %} <li class="mx-2" data-filter=".first">General Carpentry</li>
+                        <li class="mx-2" data-filter=".second">Custom Carpentry</li> {% endcomment %}
                     </ul>
                 </div>
             </div>
@@ -338,91 +411,91 @@
                 <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio-1.jpg' %}" alt="">
+                            <img class="img-fluid w-100" src="{% static 'img/image6.jpeg' %}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/portfolio-1.jpg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/image6.jpeg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
+                        {% comment %} <div class="border border-5 border-light border-top-0 p-4">
                             <p class="text-primary fw-medium mb-2">General Carpentry</p>
                             <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
                     <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio-2.jpg' %}" alt="">
+                            <img class="img-fluid w-100" src="{% static 'img/image7.jpeg' %}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/image7.jpeg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
+                        {% comment %} <div class="border border-5 border-light border-top-0 p-4">
                             <p class="text-primary fw-medium mb-2">Custom Carpentry</p>
                             <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
                     <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio-3.jpg' %}" alt="">
+                            <img class="img-fluid w-100" src="{% static 'img/image8.jpeg' %}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/portfolio-3.jpg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/image8.jpeg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
+                        {% comment %} <div class="border border-5 border-light border-top-0 p-4">
                             <p class="text-primary fw-medium mb-2">General Carpentry</p>
                             <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio-4.jpg' %}" alt="">
+                            <img class="img-fluid w-100" src="{% static 'img/image2.jpeg' %}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/portfolio-4.jpg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/image2.jpeg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
+                        {% comment %} <div class="border border-5 border-light border-top-0 p-4">
                             <p class="text-primary fw-medium mb-2">Custom Carpentry</p>
                             <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
                     <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio-5.jpg' %}" alt="">
+                            <img class="img-fluid w-100" src="{% static 'img/image3.jpeg' %}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/portfolio-5.jpg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/image3.jpeg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
+                        {% comment %} <div class="border border-5 border-light border-top-0 p-4">
                             <p class="text-primary fw-medium mb-2">General Carpentry</p>
                             <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
                     <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio-6.jpg' %}" alt="">
+                            <img class="img-fluid w-100" src="{% static 'img/image4.jpeg' %}" alt="">
                             <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/portfolio-6.jpg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="{% static 'img/image4.jpeg' %}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                                 <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
+                        {% comment %} <div class="border border-5 border-light border-top-0 p-4">
                             <p class="text-primary fw-medium mb-2">Custom Carpentry</p>
                             <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -437,7 +510,7 @@
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/quote.jpg' %}" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/n.jpg' %}" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
