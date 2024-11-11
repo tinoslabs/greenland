@@ -40,14 +40,7 @@ class Contact(models.Model):
         return self.name
     
     
-class Brochure(models.Model):
-    
-    brochure = models.FileField(upload_to='brochure/', null=True, blank=True)
-    upload_date = models.DateTimeField(auto_now_add=True, help_text="Date when the brochure was uploaded")
-    updated_date = models.DateTimeField(auto_now=True, help_text="Date when the brochure was last updated")
 
-    def __str__(self):
-        return self.title or "Brochure"
     
 class BrochureModel(models.Model):
     pdf_file = models.FileField(upload_to='pdfs/')
