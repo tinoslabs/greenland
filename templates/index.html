@@ -35,9 +35,12 @@
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
                                 <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                {% for brochure in brochure %}
+                                {% comment %} {% for brochure in brochure %}
                                 <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
-                                {% endfor %}
+                                {% endfor %} {% endcomment %}
+                               
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -71,9 +74,9 @@
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
                                 <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                {% for brochure in brochure %}
-                                <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
-                                {% endfor %}
+                                
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                               
                             </div>
                         </div>
                     </div>
@@ -89,9 +92,9 @@
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
                                 <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                {% for brochure in brochure %}
-                                <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
-                                {% endfor %}
+                               
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                                
                             </div>
                         </div>
                     </div>
