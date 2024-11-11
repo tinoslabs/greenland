@@ -568,7 +568,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    {% comment %} <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">What Our Client Say's</h1>
@@ -579,18 +579,18 @@
                     {% if review.client_image %}
                     <img class="img-fluid bg-light p-2 mx-auto mb-3" src="{{ review.client_image.url }}" style="width: 90px; height: 90px;">
                     {% else %}
-                    {% comment %} <img class="img-fluid bg-light p-2 mx-auto mb-3" src="{% static 'img/default-client.jpg' %}" style="width: 90px; height: 90px;"> {% endcomment %}
+                    
                     {% endif %}
                     <div class="testimonial-text text-center p-4">
                         <p>{{ review.review|default:"No review available." }}</p>
                         <h5 class="mb-1">{{ review.client_name|default:"Anonymous" }}</h5>
-                        {% comment %} <span class="fst-italic">{{ review.profession|default:"Client" }}</span> {% endcomment %}
+                        
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     
 
 {% endblock %}

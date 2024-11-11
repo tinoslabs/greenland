@@ -3,13 +3,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
-from .models import ClientReview,Products,ShadeCard,Contact,PdfModel
-from .forms import ClientReviewForm,ProductForm,ShadeCardForm,ContactForm,pfdForm
+from .models import Products,ShadeCard,Contact,PdfModel
+from .forms import ProductForm,ShadeCardForm,ContactForm,pfdForm
 
 # Create your views here.
 
 def index(request):
-    client_reviews = ClientReview.objects.all()
+    # client_reviews = ClientReview.objects.all()
     brochure = PdfModel.objects.all()
     
     if request.method == 'POST':
@@ -20,7 +20,7 @@ def index(request):
             return redirect('index')
     else:
         form = ContactForm()
-    return render(request, 'index.html', {'client_reviews': client_reviews, 'form': form,'brochure':brochure})
+    return render(request, 'index.html', {'form': form,'brochure':brochure})
 
 @csrf_protect
 def user_login(request):

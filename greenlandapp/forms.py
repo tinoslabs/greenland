@@ -1,9 +1,9 @@
 from django import forms
-from .models import ClientReview,Products,ShadeCard,Contact,PdfModel
-class ClientReviewForm(forms.ModelForm):
-    class Meta:
-        model = ClientReview
-        fields = '__all__'
+from .models import Products,ShadeCard,Contact,PdfModel
+# class ClientReviewForm(forms.ModelForm):
+#     class Meta:
+#         model = ClientReview
+#         fields = '__all__'
         
 class ProductForm(forms.ModelForm):
     class Meta:

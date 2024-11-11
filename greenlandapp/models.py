@@ -1,14 +1,14 @@
 from django.db import models
 
-# Create your models here.
-class ClientReview(models.Model):
-    client_name = models.CharField(max_length=100, null=True, blank=True)
-    client_image = models.ImageField(upload_to='client_images/', null=True, blank=True)
+# # Create your models here.
+# class ClientReview(models.Model):
+#     client_name = models.CharField(max_length=100, null=True, blank=True)
+#     client_image = models.ImageField(upload_to='client_images/', null=True, blank=True)
     
-    review = models.TextField(null=True, blank=True)
+#     review = models.TextField(null=True, blank=True)
     
-    def __str__(self):
-        return f"{self.client_name} - {self.review}"
+#     def __str__(self):
+#         return f"{self.client_name} - {self.review}"
     
     
 class Products(models.Model):
