@@ -1,6 +1,5 @@
 from django import forms
-from .models import ClientReview,Products,ShadeCard,Contact,BrochureModel
-
+from .models import ClientReview,Products,ShadeCard,Contact,PdfModel
 class ClientReviewForm(forms.ModelForm):
     class Meta:
         model = ClientReview
@@ -21,9 +20,11 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = '__all__'
         
-
-class BrochureForm(forms.ModelForm):
+class pfdForm(forms.ModelForm):
     class Meta:
-        model = BrochureModel
+        model = PdfModel
         fields = ['pdf_file']
+        
+
+
         

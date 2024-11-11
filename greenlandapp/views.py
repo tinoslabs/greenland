@@ -3,14 +3,14 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
-from .models import ClientReview,Products,ShadeCard,Contact,BrochureModel
-from .forms import ClientReviewForm,ProductForm,ShadeCardForm,ContactForm,BrochureForm
+from .models import ClientReview,Products,ShadeCard,Contact,PdfModel
+from .forms import ClientReviewForm,ProductForm,ShadeCardForm,ContactForm,pfdForm
 
 # Create your views here.
 
 def index(request):
     client_reviews = ClientReview.objects.all()
-    brochure = BrochureModel.objects.all()
+    brochure = PdfModel.objects.all()
     
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -165,7 +165,7 @@ def delete_card(request,id):
 
 
 def about(request):
-    brochure = BrochureModel.objects.all()
+    brochure = PdfModel.objects.all()
     return render(request,'about.html',{'brochure':brochure})
 
 # def contact(request):
@@ -179,7 +179,7 @@ def about(request):
 #     return render(request,'contact.html',{'form':form})
 
 def contact(request):
-    brochure = BrochureModel.objects.all()
+    brochure = PdfModel.objects.all()
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -204,34 +204,34 @@ def delete_contact(request,id):
 
 def upload_brochure(request):
     if request.method == 'POST':
-        form = BrochureForm(request.POST, request.FILES)
+        form = pfdForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('view_brochures')
     else:
-        form = BrochureForm()
+        form = pfdForm()
     return render(request, 'admin_pages/upload_brochure.html', {'form': form})
 
 # View to display all brochures
 def view_brochures(request):
-    brochures = BrochureModel.objects.all().order_by('-upload_date')
+    brochures = PdfModel.objects.all().order_by('-upload_date')
     return render(request, 'admin_pages/view_brochures.html', {'brochures': brochures})
 
 # View to update a brochure
 def update_brochure(request, pk):
-    brochure = get_object_or_404(BrochureModel, pk=pk)
+    brochure = get_object_or_404(PdfModel, pk=pk)
     if request.method == 'POST':
-        form = BrochureForm(request.POST, request.FILES, instance=brochure)
+        form = pfdForm(request.POST, request.FILES, instance=brochure)
         if form.is_valid():
             form.save()
             return redirect('view_brochures')
     else:
-        form = BrochureForm(instance=brochure)
+        form = pfdForm(instance=brochure)
     return render(request, 'admin_pages/update_brochure.html', {'form': form})
 
 # View to delete a brochure
 def delete_brochure(request, pk):
-    brochure = get_object_or_404(BrochureModel, pk=pk)
+    brochure = get_object_or_404(PdfModel, pk=pk)
     if request.method == 'POST':
         brochure.delete()
     return redirect('view_brochures')
@@ -239,7 +239,7 @@ def delete_brochure(request, pk):
 
 
 def service(request):
-    brochure = BrochureModel.objects.all()
+    brochure = PdfModel.objects.all()
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -253,15 +253,15 @@ def service(request):
 
 def products(request):
     products = Products.objects.all()
-    brochure = BrochureModel.objects.all()
+    brochure = PdfModel.objects.all()
     return render(request,'products.html',{'products':products,'brochure':brochure})
 
 
 def shade_card(request):
     shade_cards = ShadeCard.objects.all()
-    brochure = BrochureModel.objects.all()
+    brochure = PdfModel.objects.all()
     return render(request,'shade_card.html',{'shade_cards':shade_cards,'brochure':brochure})
 
 def gallery(request):
-    brochure = BrochureModel.objects.all()
+    brochure = PdfModel.objects.all()
     return render(request,'gallery.html',{'brochure':brochure})
