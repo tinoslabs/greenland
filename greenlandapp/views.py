@@ -120,7 +120,7 @@ def update_product(request, id):
 
 @login_required(login_url='user_login')
 def delete_product(request,id):
-    product = ClientReview.objects.get(id=id)
+    product = Products.objects.get(id=id)
     product.delete()
     return redirect('view_product')
 
