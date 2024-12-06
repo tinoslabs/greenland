@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Page Header Start -->
+    {% comment %} <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </div>
+    </div> {% endcomment %}
+    <div class="container-fluid page-header py-5 mb-5" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(53, 53, 53, 0.7)),url('{% static "img/l.jpg" %}') center center no-repeat; background-size: cover;">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Home</a></li>
+                    
+                    <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+        <div class="container contact px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Contact Us</h1>
+                        </div>
+                        <p class="mb-4">35 years of experience in business have made me realize that the specific ingredients for growth and success are Quality and Trust, never compromise on quality and build relationships with strong foundation of trust, success will certainly follow. </a>.</p>
+                        
+                        <form method="post" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            
+                            {% if messages %}
+                                <div class="alert alert-success">
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;" name="name" value="{{ form.name.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" name="email" value="{{ form.email.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;" name="phone" value="{{ form.phone.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Subject" style="height: 55px;" name="subject" value="{{ form.subject.value|default:'' }}">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Special Note" name="comment">{{ form.comment.value|default:'' }}</textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.210091425593!2d76.4591074!3d10.1211058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07e28364673fa3%3A0x840f47c29bba7581!2sGreenland%20Particle%20Boards%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1699376953733!5m2!1sen!2sin"
+                            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    {% endblock %}

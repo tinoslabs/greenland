@@ -1,0 +1,63 @@
+{% extends "admin_pages/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="home" style="    position: relative;
+background-color: #ffffff;
+">
+    <div class="toggle-sidebar">
+        <i class='bx bx-menu'></i>
+        <div class="text"></div>
+    </div>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Add Package</div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data" id="imageUploadForm">
+                        {% csrf_token %}
+                        
+
+                        
+
+                        <div class="form-group">
+                            <label for="gallery_image">Upload Image</label>
+                            <input type="file" class="form-control-file" id="gallery_image" name="gallery_image" accept="image/*" multiple required>
+                            <!-- <small class="text-muted">Upload high-quality images for better user experience. <br> Opt for greater width and smaller height (e.g., 4621x3072px).</small> -->
+                        </div>
+                        
+                        <button type="submit" class="btn" style="background: #776cc2; color: aliceblue;">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- JavaScript -->
+<script src="{% static 'ad/js/jquery.min.js' %}"></script>
+<script src="{% static 'ad/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'ad/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'ad/js/bootstrap-select.min.js' %}"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/35.2.0/classic/ckeditor.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize CKEditor
+    ClassicEditor
+        .create(document.querySelector('#description'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+});
+
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Page Header Start -->
+    {% comment %} <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Service</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Home</a></li>
+                    
+                    <li class="breadcrumb-item text-white active" aria-current="{% url 'service' %}">Service</li>
+                </ol>
+            </nav>
+        </div>
+    </div> {% endcomment %}
+    <div class="container-fluid page-header py-5 mb-5" style="background: url('{% static "img/o.jpg" %}') center center no-repeat; background-size: cover;">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Service</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Home</a></li>
+                    
+                    <li class="breadcrumb-item text-white active" aria-current="page">Service</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1 class="display-5 mb-5">Our Services</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/3.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Customized Particle Board Solutions</h4>
+                            <p>Offering a wide variety of decors and laminates to suit both aesthetic and functional requirements for residential, commercial, and industrial projects.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/35.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Bulk Supply and Distribution</h4>
+                            <p>With the capacity to manufacture large volumes, Greenland efficiently meets bulk orders, ideal for large-scale construction, interior design, and furniture manufacturing projects.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/j.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Sustainable Manufacturing</h4>
+                            <p>Greenland's use of renewable rubber resources positions it as a sustainable choice for clients who prioritize eco-friendly materials.</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/i.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Responsive Customer Support</h4>
+                            <p>Greenland provides dedicated support to help clients select the best products for their needs, ensuring satisfaction from order placement to delivery.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/f.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Logistics and Delivery</h4>
+                            <p>Serving an extensive network across India and beyond, Greenland's logistics services are streamlined to deliver products on time and in excellent condition.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/h.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Product Customization</h4>
+                            <p>Greenland Particle Boards Pvt. Ltd. offers personalized design consultations to help clients select the ideal particle boards for their unique projects.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+<style>
+    .service-item img {
+        height: 250px; /* Adjust this height as needed */
+        width: 100%;
+        object-fit: cover; /* Ensures the image covers the area and is centered */
+    }
+</style>
+    <!-- Service End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/c.jpg' %}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Free Quote</h1>
+                        </div>
+                        <p class="mb-4 pb-2">35 years of experience in business have made me realize that the specific ingredients for growth and success are Quality and Trust, never compromise on quality and build relationships with strong foundation of trust, success will certainly follow. </p>
+                        <form method="post" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            
+                            {% if messages %}
+                                <div class="alert alert-success">
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;" name="name" value="{{ form.name.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" name="email" value="{{ form.email.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;" name="phone" value="{{ form.phone.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Subject" style="height: 55px;" name="subject" value="{{ form.subject.value|default:'' }}">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Special Note" name="comment">{{ form.comment.value|default:'' }}</textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+
+
+    <!-- Testimonial Start -->
+    
+    <!-- Testimonial End -->
+        
+
+    {% endblock %}

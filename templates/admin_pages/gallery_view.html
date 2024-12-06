@@ -1,0 +1,55 @@
+{% extends "admin_pages/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="col-lg-11 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">GALLERY VIEW</h4>
+            <a href="{% url 'add_gallery' %}">
+                <button class="btn btn-primary">Add Gallery</button>
+            </a>
+            
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for details in gallery %}
+                  <tr>
+                  
+                    <td style="width: 150px; ">
+                      {% if details.gallery_image %}
+                      <img src="{{ details.gallery_image.url }}" alt="Current Image" style="width: 80px; height: 80px;">
+                      <br>
+                      <!-- <input type="checkbox" name="remove_image"> Remove Current Image -->
+                  {% else %}
+                      <p>No image available</p>
+                  {% endif %}
+                    </td>
+
+                    <td style="width: 150px;">
+                      <a href="{% url 'update_gallery' details.id  %}"><button><i class="mdi mdi-cloud-upload" aria-hidden="true"></i> </button></a>
+                  </td>
+                  <td style="width: 150px;">
+                    <a href="{% url 'delete_gallery' details.id  %}"><button><i class="mdi mdi-delete" aria-hidden="true"></i> </button></a>
+                </td>
+                  
+                    
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "admin_pages/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="col-lg-10 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">UV Brochure</h4>
+            
+            <div class="table-responsive">
+                <div style="overflow-x: auto;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>UV Brochure</th>
+                                <th>Date</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for brochure in brochures %}
+                            <tr>
+                                <td>
+                                    {% if brochure.pdf_file %}
+                                        <a href="{{ brochure.pdf_file.url }}" target="_blank">View Brochure</a>
+                                    {% else %}
+                                        No brochure available
+                                    {% endif %}
+                                </td>
+                                <td>{{ brochure.upload_date|date:"Y-m-d H:i" }}</td>
+                                <td style="width: 150px;">
+                                    <a href="{% url 'update_brochure' brochure.id %}"><button><i class="mdi mdi-cloud-upload" aria-hidden="true"></i> </button></a>
+                                </td>
+                                <td style="width: 150px;">
+                                    <form action="{% url 'delete_brochure' brochure.id %}" method="post" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit"><i class="mdi mdi-delete" aria-hidden="true"></i> </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

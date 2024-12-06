@@ -1,0 +1,62 @@
+{% extends "admin_pages/base.html" %}
+{% load static %}
+
+{% block content %}
+ 
+            <div class="col-lg-10 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Brochure</h4>
+                  
+                  <div class="table-responsive">
+                    <div style="overflow-x: auto;">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          
+                          <th>
+                            Brochure
+                          </th>
+                          
+                          <th>
+                            Update
+                          </th>
+                          <th>
+                            Delete
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for data in brochure %}
+                        <tr>
+                          
+                        
+                          
+                          <td>
+                            {% if data.brochure %}
+                              <a href="{{ data.brochure }}" target="_blank">Brochure</a>
+                            {% else %}
+                              No video available
+                            {% endif %}
+                          </td>
+                          
+                          <td style="width: 150px; ">
+                            <a href=""><button><i class="mdi mdi-cloud-upload" aria-hidden="true"></i> </button></a>
+                          </td>
+                          <td style="width: 150px; ">
+                            <a href=""><button><i class="mdi mdi-delete" aria-hidden="true"></i> </button></a>
+                           
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        {% endblock %}

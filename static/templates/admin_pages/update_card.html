@@ -1,0 +1,42 @@
+{% extends "admin_pages/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Update Card</h4>
+                    <form class="forms-sample" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <div class="form-group">
+                            <label for="id_product_name">Shade Card Name</label>
+                            <input type="text" class="form-control" id="id_product_name" name="card_name" value="{{ form.card_name.value }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_image">Image</label>
+                            <input type="file" class="form-control" id="id_image" name="card_image">
+                            {% if form.instance.card_image %}
+                                <img src="{{ form.instance.card_image.url }}" alt="Current Image" style="max-width: 150px; margin-top: 10px;">
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_product_name"> Description </label>
+                            <input type="text" class="form-control" id="id_product_name" name="description" value="{{ form.description.value }}">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary me-2">Update Product</button>
+                        <a href="{% url 'view_product' %}" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+{% endblock %}

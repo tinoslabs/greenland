@@ -1,0 +1,103 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Page Header Start -->
+    {% comment %} <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Shade Card</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Home</a></li>
+                   
+                    <li class="breadcrumb-item text-white active" aria-current="page">Project</li>
+                </ol>
+            </nav>
+        </div>
+    </div> {% endcomment %}
+    <div class="container-fluid page-header py-5 mb-5" style="background: url('{% static "img/l.jpg" %}') center center no-repeat; background-size: cover;">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Shade Card</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Home</a></li>
+                    
+                    <li class="breadcrumb-item text-white active" aria-current="page">Shade Card</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Projects Start -->
+    <!-- your_template.html -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h1 class="display-5 mb-5">Shade Card</h1>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="mx-2 active" data-filter="*">All Shade Cards</li>
+                            {% comment %} <li class="mx-2" data-filter=".first">General Carpentry</li>
+                            <li class="mx-2" data-filter=".second">Custom Carpentry</li> {% endcomment %}
+                        </ul>
+                    </div>
+                </div>
+                {% comment %} <div class="row g-4 portfolio-container">
+                    {% for card in shade_cards %}
+                    <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ card.card_image.url }}" alt="{{ card.card_name }}" height="900px;">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ card.card_image.url }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="#"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="border border-5 border-light border-top-0 p-4">
+                                
+                                <h5 class="lh-base mb-0">{{ card.card_name }}</h5>
+                                <p class="text-primary fw-medium mb-2">{{ card.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div> {% endcomment %}
+                <div class="row g-4 portfolio-container">
+                    {% for card in shade_cards %}
+                    <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100 fixed-height" src="{{ card.card_image.url }}" alt="{{ card.card_name }}">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ card.card_image.url }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="#"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="border border-5 border-light border-top-0 p-4">
+                                <h5 class="lh-base mb-0">{{ card.card_name }}</h5>
+                                <p class="text-primary fw-medium mb-2">{{ card.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </div>
+        <style>
+            .fixed-height {
+                height: 500px; /* Set a fixed height that works best for your layout */
+                object-fit: cover;
+            }
+        </style>
+
+    <!-- Projects End -->
+{% endblock %}    
+
+    

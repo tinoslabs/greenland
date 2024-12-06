@@ -1,0 +1,485 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 pb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            
+            <div class="owl-carousel-item position-relative" style="height: 700px;"> 
+                <img class="img-fluid w-100 h-100" src="{% static 'img/60.jpg' %}" alt="" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, 0);"> <!-- Make background transparent -->
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
+                                <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                               
+                                {% for brochure in brochure %}
+                                <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="owl-carousel-item position-relative" style="height: 700px;"> <!-- Adjust height as needed -->
+                <img class="img-fluid w-100 h-100" src="{% static 'img/c.jpg' %}" alt="" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, 0);"> <!-- Make background transparent -->
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
+                                <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                {% for brochure in brochure %}
+                                <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" style="height: 700px;"> <!-- Adjust height as needed -->
+                <img class="img-fluid w-100 h-100" src="{% static 'img/a.jpg' %}" alt="" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, 0);"> <!-- Make background transparent -->
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-8 text-center">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Greenland Particle Boards Pvt Ltd</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Founded in 2010, Greenland Particle Boards aims to redefine the particle board industry with advanced manufacturing techniques and a commitment to quality.</p>
+                                <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                {% for brochure in brochure %}
+                                <a href="{{ brochure.pdf_file.url }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Our Brochure</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .header-image-container {
+            height: 500px; /* Default height for larger screens */
+        }
+        
+        .header-image-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        /* Remove overlay shade */
+        .header-image-container .overlay {
+            background: rgba(53, 53, 53, 0); /* Fully transparent */
+        }
+        
+        /* Adjust for small screens */
+        @media (max-width: 768px) {
+            .header-image-container {
+                height: 300px; /* Adjust height for medium screens */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-image-container {
+                height: 200px; /* Adjust height for small screens */
+            }
+        }
+        
+    </style>
+    <!-- Carousel End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
+                            <i class="fa fa-user-check fa-2x text-primary"></i>
+                        </div>
+                        <h1 class="display-1 text-light mb-0">01</h1>
+                    </div>
+                    <h5>Creative Designers</h5>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <h1 class="display-1 text-light mb-0">02</h1>
+                    </div>
+                    <h5>Quality Products</h5>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
+                            <i class="fa fa-drafting-compass fa-2x text-primary"></i>
+                        </div>
+                        <h1 class="display-1 text-light mb-0">03</h1>
+                    </div>
+                    <h5>Market Reach</h5>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="d-flex align-items-center justify-content-center bg-light" style="width: 60px; height: 60px;">
+                            <i class="fa fa-check fa-2x text-primary"></i>
+                        </div>
+                        <h1 class="display-1 text-light mb-0">04</h1>
+                    </div>
+                    <h5>Production Capacity</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature Start -->
+
+
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/44.jpg' %}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">About Us</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Greenland Particle Boards Pvt Ltd. is one of the best and leading manufacturers of wood based Particle Boards in India.<br> We manufacture Particle Boards that are of premium quality and our primary customers are OEMs, manufacturers of furniture and other products of which Particle Boards are an eminent raw material.
+
+                            Particle Board aka chipboard is an engineered wood product that is made from wood-fibre, blended with a synthetic resin  pressed in a hot press at a temperature of 180° to 200° C.</p>
+                        <div class="row g-4 mb-4 pb-2">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-users fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
+                                        <p class="fw-medium mb-0">Happy Clients</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-check fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Quality</p>
+                                        <h5 class="mb-0">Services</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{% url 'shade_card' %}" class="btn btn-primary py-3 px-5">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1 class="display-5 mb-5">Our Services</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/3.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Customized Particle Board Solutions</h4>
+                            <p>Offering a wide variety of decors and laminates to suit both aesthetic and functional requirements for residential, commercial, and industrial projects.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/35.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Bulk Supply and Distribution</h4>
+                            <p>With the capacity to manufacture large volumes, Greenland efficiently meets bulk orders, ideal for large-scale construction, interior design, and furniture manufacturing projects.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/j.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Sustainable Manufacturing</h4>
+                            <p>Greenland's use of renewable rubber resources positions it as a sustainable choice for clients who prioritize eco-friendly materials.</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/i.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Responsive Customer Support</h4>
+                            <p>Greenland provides dedicated support to help clients select the best products for their needs, ensuring satisfaction from order placement to delivery.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/f.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Logistics and Delivery</h4>
+                            <p>Serving an extensive network across India and beyond, Greenland's logistics services are streamlined to deliver products on time and in excellent condition.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/h.jpg' %}" alt="">
+                        </div>
+                        <div class="p-4 text-center border border-5 border-light border-top-0">
+                            <h4 class="mb-3">Product Customization</h4>
+                            <p>Greenland Particle Boards Pvt. Ltd. offers personalized design consultations to help clients select the ideal particle boards for their unique projects.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+<style>
+    .service-item img {
+        height: 250px; /* Adjust this height as needed */
+        width: 100%;
+        object-fit: cover; /* Ensures the image covers the area and is centered */
+    }
+</style>
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Why Choose Us</h1>
+                        </div>
+                        <p class="mb-4 pb-2">35 years of experience in business have made me realize that the specific ingredients for growth and success are Quality and Trust, never compromise on quality and build relationships with strong foundation of trust, success will certainly follow. 
+
+                            Greenland Particle Boards Pvt. Ltd was our first venture in the manufacturing industry and with no exception to the above principle, we have strived in all possible ways to provide our customers with highest quality pre-lam particle boards produced using state of the art technologies. Looking forward to maintain our strong customer base and expand it at the same time, in the years to follow!!! I am very pleased to announce that our next project – Nailah Chip Boards Pvt. Ltd. – with an even larger production capacity is underway and is expected to start operations and sales by “January 2024" at Kannur District , Kerala State.</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-check fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Quality</p>
+                                        <h5 class="mb-0">Services</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-user-check fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Creative</p>
+                                        <h5 class="mb-0">Designers</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-drafting-compass fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Free</p>
+                                        <h5 class="mb-0">Consultation</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-headphones fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Customer</p>
+                                        <h5 class="mb-0">Support</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/b.jpg' %}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-5"> 
+        <div class="container">
+            <div class="section-title text-center">
+                <h1 class="display-5 mb-5">Our Gallery</h1>
+            </div>
+            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline mb-5" id="portfolio-flters">
+                        <li class="mx-2 active" data-filter="*">All</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row g-4 portfolio-container">
+                {% for item in gallery %}
+                    <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ item.gallery_image.url }}" alt="Gallery Image">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ item.gallery_image.url }}" data-lightbox="portfolio">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="#"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Projects End -->
+
+
+    <!-- Quote Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/n.jpg' %}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Free Quote</h1>
+                        </div>
+                        <p class="mb-4 pb-2">35 years of experience in business have made me realize that the specific ingredients for growth and success are Quality and Trust, never compromise on quality and build relationships with strong foundation of trust, success will certainly follow. </p>
+                        <form method="post" action="{% url 'index' %}">
+                            {% csrf_token %}
+                            
+                            {% if messages %}
+                                <div class="alert alert-success">
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;" name="name" value="{{ form.name.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" name="email" value="{{ form.email.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;" name="phone" value="{{ form.phone.value|default:'' }}">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Subject" style="height: 55px;" name="subject" value="{{ form.subject.value|default:'' }}">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Special Note" name="comment">{{ form.comment.value|default:'' }}</textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+
+
+    <!-- Team Start -->
+    
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1 class="display-5 mb-5">What Our Client Say's</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                {% for review in client_reviews %}
+                <div class="testimonial-item text-center">
+                    {% if review.client_image %}
+                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="{{ review.client_image.url }}" style="width: 90px; height: 90px;">
+                    {% else %}
+                    {% comment %} <img class="img-fluid bg-light p-2 mx-auto mb-3" src="{% static 'img/default-client.jpg' %}" style="width: 90px; height: 90px;"> {% endcomment %}
+                    {% endif %}
+                    <div class="testimonial-text text-center p-4">
+                        <p>{{ review.review|default:"No review available." }}</p>
+                        <h5 class="mb-1">{{ review.client_name|default:"Anonymous" }}</h5>
+                        {% comment %} <span class="fst-italic">{{ review.profession|default:"Client" }}</span> {% endcomment %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}
+    
