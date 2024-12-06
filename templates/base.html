@@ -86,21 +86,7 @@
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-        {% comment %} <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
-                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
-                
-                <a href="{% url 'products' %}" class="nav-item nav-link"> Products</a>
-                <a href="{% url 'shade_card' %}" class="nav-item nav-link"> Shade Card</a>
-               
-                <a href="{% url 'contact' %}" class="nav-item nav-link"> Contact</a>
-            </div>
-            {% for brochure in brochure %}
-             <a href="{{ brochure.pdf_file.url }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Download Now<i class="fa fa-arrow-right ms-3"></i></a> 
-            {% endfor %}
-        </div> {% endcomment %}
+       
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{% url 'index' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
