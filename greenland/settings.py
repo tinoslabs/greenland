@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_sn()s2+8sl8*j2ej1#gsu$o1)^=2ab2d&mo=f02n!v+y#c(f8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['greenlandnew.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['greenland-iu8j.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
