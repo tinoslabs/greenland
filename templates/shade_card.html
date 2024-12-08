@@ -98,14 +98,14 @@
             
             
             
-            {% for brochure in brochure %}
-                <a href="{{ brochure.pdf_file.url }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Normal Shade Cards<i class="fa fa-arrow-down ms-3"></i></a> 
+            {% for pdf in file %}
+                <a href="{{ pdf.pdf_file.url }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shade Cards<i class="fa fa-arrow-down ms-3"></i></a> 
             {% endfor %}
-            {% for brochure in uv_brochure %}
+            {% comment %} {% for brochure in uv_brochure %}
             <a href="{{ brochure.pdf_file.url }}" class="custom-button py-4 px-lg-5 d-none d-lg-block">
                 UV Shade Cards <i class="fa fa-arrow-down ms-3"></i>
             </a>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
 
             
         </div>
@@ -172,48 +172,50 @@
                         </ul>
                     </div>
                 </div>
+                
                 {% comment %} <div class="row g-4 portfolio-container">
                     {% for card in shade_cards %}
                     <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ card.card_image.url }}" alt="{{ card.card_name }}" height="900px;">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ card.card_image.url }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href="#"><i class="fa fa-link"></i></a>
+                        <a href="{{ card.card_link }}" class="text-decoration-none">
+                            <div class="rounded overflow-hidden">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid w-100 fixed-height" src="{{ card.card_image.url }}" alt="{{ card.card_name }}">
+                                </div>
+                                <div class="border border-5 border-light border-top-0 p-4">
+                                    <h5 class="lh-base mb-0">{{ card.card_name }}</h5>
+                                    <p class="text-primary fw-medium mb-2">{{ card.description }}</p>
                                 </div>
                             </div>
-                            <div class="border border-5 border-light border-top-0 p-4">
-                                
-                                <h5 class="lh-base mb-0">{{ card.card_name }}</h5>
-                                <p class="text-primary fw-medium mb-2">{{ card.description }}</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     {% endfor %}
                 </div> {% endcomment %}
+
                 <div class="row g-4 portfolio-container">
                     {% for card in shade_cards %}
                     <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
-                        <div class="rounded overflow-hidden">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100 fixed-height" src="{{ card.card_image.url }}" alt="{{ card.card_name }}">
-                                <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ card.card_image.url }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href="#"><i class="fa fa-link"></i></a>
+                        {% for brochure in brochure %}
+                        <a href="{{ card.pdf_file.url }}" class="text-decoration-none">
+                            {% endfor %}
+                            <div class="rounded overflow-hidden">
+                                <div class="position-relative overflow-hidden center-image">
+                                    <img class="img-fluid w-100 fixed-height" src="{{ card.card_image.url }}" alt="{{ card.card_name }}">
+                                </div>
+                                <div class="border border-5 border-light border-top-0 p-4">
+                                    <h5 class="lh-base mb-0">{{ card.card_name }}</h5>
+                                    <p class="text-primary fw-medium mb-2">{{ card.description }}</p>
                                 </div>
                             </div>
-                            <div class="border border-5 border-light border-top-0 p-4">
-                                <h5 class="lh-base mb-0">{{ card.card_name }}</h5>
-                                <p class="text-primary fw-medium mb-2">{{ card.description }}</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     {% endfor %}
                 </div>
+
+                
                 
             </div>
         </div>
+        
         <style>
             .fixed-height {
                 height: 500px; /* Set a fixed height that works best for your layout */

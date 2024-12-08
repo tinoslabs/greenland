@@ -21,7 +21,7 @@ from ckeditor_uploader import views as ckeditor_views
 urlpatterns = [
     path('', views.index, name='index'),
     
-    
+    path('ckeditor/upload/', ckeditor_views.upload, name='ckeditor_upload'),
     path('user_login',views.user_login,name='user_login'),
     path('logout_user', views.logout_user, name='logout_user'),
 
@@ -65,9 +65,9 @@ urlpatterns = [
     path('service', views.service, name='service'),
     path('gallery', views.gallery, name='gallery'),
     
-    path('uv_brochure', views.uv_brochure, name='uv_brochure'),
-    path('view_uv_brochures', views.view_uv_brochures, name='view_uv_brochures'),
-    path('update_uv_brochure/<int:pk>', views.update_uv_brochure, name='update_uv_brochure'),
-    path('delete_uv_brochure/<int:pk>', views.delete_uv_brochure, name='delete_uv_brochure'),
+    path('shade_card_brochure', views.shade_card_brochure, name='shade_card_brochure'),
+    path('view_card_brochure', views.view_card_brochure, name='view_card_brochure'),
+    path('update_card_brochure/<int:pk>', views.update_card_brochure, name='update_card_brochure'),
+    path('delete_card_brochure/<int:pk>', views.delete_card_brochure, name='delete_card_brochure'),
 
 ]

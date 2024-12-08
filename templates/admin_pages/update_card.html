@@ -23,10 +23,23 @@
                                 <img src="{{ form.instance.card_image.url }}" alt="Current Image" style="max-width: 150px; margin-top: 10px;">
                             {% endif %}
                         </div>
-                        <div class="form-group">
+                        {% comment %} <div class="form-group">
                             <label for="id_product_name"> Description </label>
                             <input type="text" class="form-control" id="id_product_name" name="description" value="{{ form.description.value }}">
-                        </div>
+                        </div> {% endcomment %}
+
+                        {% if form.instance.pdf_file %}
+                                <div class="form-group">
+                                    <label>Current Brochure:</label>
+                                    <p><a href="{{ form.instance.pdf_file.url }}" target="_blank">View Current Brochure</a></p>
+                                </div>
+                            {% endif %}
+                            
+                            <div class="form-group">
+                                <label for="pdfFile">Upload New Brochure (optional)</label>
+                                <input type="file" class="form-control-file" id="pdfFile" name="pdf_file" accept="application/pdf">
+                            </div>
+                            
 
                         <button type="submit" class="btn btn-primary me-2">Update Product</button>
                         <a href="{% url 'view_product' %}" class="btn btn-secondary">Cancel</a>

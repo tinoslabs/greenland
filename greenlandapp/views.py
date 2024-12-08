@@ -267,9 +267,9 @@ def product_details(request, product_id):
 
 def shade_card(request):
     shade_cards = ShadeCard.objects.all()
-    uv_brochure = UvModel.objects.all()
+    file = UvModel.objects.all()
     brochure = PdfModel.objects.all()
-    return render(request,'shade_card.html',{'shade_cards':shade_cards,'brochure':brochure,'uv_brochure':uv_brochure})
+    return render(request,'shade_card.html',{'shade_cards':shade_cards,'brochure':brochure,'file':file})
 
 def gallery(request):
     brochure = PdfModel.objects.all()
@@ -317,39 +317,39 @@ def delete_gallery(request,id):
 
 
 
-def uv_brochure(request):
+def shade_card_brochure(request):
     if request.method == 'POST':
         form = uvForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('view_uv_brochures')
+            return redirect('view_card_brochure')
     else:
         form = uvForm()
-    return render(request, 'admin_pages/uv_brochure.html', {'form': form})
+    return render(request, 'admin_pages/shade_card_brochure.html', {'form': form})
 
 # View to display all brochures
-def view_uv_brochures(request):
+def view_card_brochure(request):
     brochures = UvModel.objects.all().order_by('-upload_date')
-    return render(request, 'admin_pages/view_uv_brochures.html', {'brochures': brochures})
+    return render(request, 'admin_pages/view_card_brochure.html', {'brochures': brochures})
 
 # View to update a brochure
-def update_uv_brochure(request, pk):
-    brochure = get_object_or_404(PdfModel, pk=pk)
+def update_card_brochure(request, pk):
+    brochure = get_object_or_404(UvModel, pk=pk)
     if request.method == 'POST':
         form = uvForm(request.POST, request.FILES, instance=brochure)
         if form.is_valid():
             form.save()
-            return redirect('view_uv_brochures')
+            return redirect('view_card_brochure')
     else:
         form = uvForm(instance=brochure)
-    return render(request, 'admin_pages/update_uv_brochure.html', {'form': form})
+    return render(request, 'admin_pages/update_card_brochure.html', {'form': form})
 
 # View to delete a brochure
-def delete_uv_brochure(request, pk):
+def delete_card_brochure(request, pk):
     brochure = get_object_or_404(UvModel, pk=pk)
     if request.method == 'POST':
         brochure.delete()
-    return redirect('view_uv_brochures')
+    return redirect('view_card_brochure')
 
 
 from django.views.decorators.csrf import csrf_exempt

@@ -25,7 +25,8 @@ class Products(models.Model):
 class ShadeCard(models.Model):
     card_name = models.CharField(max_length=100, null=True, blank=True)
     card_image = models.ImageField(upload_to='images/', null=True, blank=True)
-    description = models.TextField(null=True,blank=True)
+    pdf_file = models.FileField(upload_to='pdfs/')
+    updated_date = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return self.card_name or 'Unnamed Product'

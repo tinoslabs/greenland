@@ -134,11 +134,11 @@
       </div>
     </li>
 
-    <li class="nav-item nav-category">Brochure</li>
+    <li class="nav-item nav-category">Main Brochure</li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#ui-brochure" aria-expanded="false" aria-controls="ui-basic">
         <i class="menu-icon mdi mdi-floor-plan"></i>
-        <span class="menu-title">Brochure</span>
+        <span class="menu-title">Main Brochure</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="ui-brochure">
@@ -150,18 +150,38 @@
       </div>
     </li>
 
-    <li class="nav-item nav-category">UV Brochure</li>
+    <li class="nav-item nav-category">Shade Cards Brochure</li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#uv-brochure" aria-expanded="false" aria-controls="ui-basic">
         <i class="menu-icon mdi mdi-floor-plan"></i>
-        <span class="menu-title">UV Brochure</span>
+        <span class="menu-title">Shade Cards Brochure</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="uv-brochure">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{% url 'uv_brochure' %}">UV Brochure</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{% url 'view_uv_brochures' %}">View Brochure</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'shade_card_brochure' %}">Shade Cards Brochure</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'view_card_brochure' %}">View Brochure</a></li>
           
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item nav-category">Shade Cards</li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#shade-elements" aria-expanded="false"
+        aria-controls="shade-elements">
+        <i class="menu-icon mdi mdi-layers-outline"></i>
+        <span class="menu-title">Shade Cards</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="shade-elements">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="{% url 'add_shade_card' %}">Add Shade Cards</a></li>
+        </ul>
+      </div>
+      <div class="collapse" id="shade-elements">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="{% url 'view_card' %}">View Shade Cards</a></li>
         </ul>
       </div>
     </li>
@@ -202,25 +222,7 @@
       </div>
     </li>
 
-    <li class="nav-item nav-category">Shade Cards</li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#shade-elements" aria-expanded="false"
-        aria-controls="shade-elements">
-        <i class="menu-icon mdi mdi-layers-outline"></i>
-        <span class="menu-title">Shade Cards</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="shade-elements">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="{% url 'add_shade_card' %}">Add Shade Cards</a></li>
-        </ul>
-      </div>
-      <div class="collapse" id="shade-elements">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="{% url 'view_card' %}">View Shade Cards</a></li>
-        </ul>
-      </div>
-    </li>
+    
     {% comment %} <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
         <i class="menu-icon mdi mdi-chart-line"></i>
