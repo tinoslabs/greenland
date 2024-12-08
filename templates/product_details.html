@@ -28,8 +28,9 @@
         <div class="col-md-6">
             <div class="p-4 border rounded shadow-sm" style="background-color: #f0f0f0;"> <!-- Gray background -->
                 <h2 class="text-primary mb-3">{{ product.product_name }}</h2>
-                <p class="text-muted mb-2">{{ product.description|safe }}</p>
-                <p>{{ product.details|safe }}</p>
+                <p class="text-muted mb-2" style="max-width: 100%; overflow: hidden;">{{ product.description|safe }}</p>
+          <p>{{ product.details|safe }}</p> 
+                
             </div>
         </div>
         
@@ -39,6 +40,7 @@
 </div>
 
 
+</style>
 
     <style>
         table {

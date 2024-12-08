@@ -4,10 +4,6 @@
 {% block content %}
 
 
-
-    
-
-
     <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 grid-margin stretch-card">
@@ -21,17 +17,22 @@
                   
                   <div class="form-group">
                     <label for="productName">Shade Card Name</label>
-                    <input type="text" class="form-control" id="productName" name="card_name" placeholder="Optional">
+                    <input type="text" class="form-control" id="productName" name="card_name" placeholder="Card name" required>
                   </div>
 
                   <div class="form-group">
                     <label for="imageFile">Product Image</label>
-                    <input type="file" class="form-control" id="imageFile" name="card_image" placeholder="Upload Image">
+                    <input type="file" class="form-control" id="imageFile" name="card_image" placeholder="Upload Image" required>
                   </div>
                   
-                  <div class="form-group">
+                  {% comment %} <div class="form-group">
                     <label for="productName">Description</label>
                     <input type="text" class="form-control" id="productDes" name="description" placeholder="Optional">
+                  </div> {% endcomment %}
+
+                  <div class="form-group">
+                    <label for="pdfFile">Upload Brochure</label>
+                    <input type="file" class="form-control-file" id="pdfFile" name="pdf_file" accept="application/pdf" required>
                   </div>
 
                   <div class="form-check form-check-flat form-check-primary">
